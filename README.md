@@ -41,11 +41,11 @@ By traversing the tree, the LLM maintains the "structural context" (e.g., it kno
 
 ## 📊 Project Highlights
 
-#### Zero-Vector Setup:  No need for complex embedding models or vector databases.
+1. Zero-Vector Setup:  No need for complex embedding models or vector databases.
 
-#### High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
+2. High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
 
-#### Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
+3. Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
 
 ## 💻 Getting Started
 
@@ -64,8 +64,7 @@ I built this project to explore the frontiers of Agentic RAG. While vector datab
 
 ## Key Skills Demonstrated: 
 
-### RAG Architecture (Traditional vs. Tree-based)
-### API Integration (PageIndex, Groq)
-### Prompt Engineering for Agentic Navigation
-
-Technical Documentation & Information Retrieval
+1. RAG Architecture (Traditional vs. Tree-based)
+2. API Integration (PageIndex, Groq)
+3. Prompt Engineering for Agentic Navigation
+4. Technical Documentation & Information Retrieval
