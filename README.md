@@ -12,59 +12,62 @@ Inefficient Reasoning: LLMs must "guess" which chunks are relevant based on a si
 This project implements a Vectorless RAG pipeline that replaces the "flat" vector database with a Hierarchical Document Tree. Instead of searching for similar vectors, an LLM agent navigates the actual structure of the document—moving from high-level summaries to specific technical details—mimicking how a human researcher reads a paper.
 
 🛠️ Tech Stack
-Core Engine: PageIndex (for automated document tree construction and hierarchical search).
+Core Engine: PageIndex (Automated document tree construction and hierarchical search).
 
-Inference: Groq / OpenAI (handling the reasoning and final generation).
+Inference: Groq / OpenAI (Handling reasoning and final generation).
 
 Data Processing: Python, Jupyter Notebook.
 
 Target Data: Complex Research Papers (e.g., Spatial Pyramid Pooling in Deep Convolutional Networks).
 
 🏗️ How it Works
+1. Automated Tree Construction
+The system ingests a PDF and parses its layout into a multi-level tree:
 
-## 1. Automated Tree Construction
-The system ingests a PDF and uses PageIndex to parse its layout into a multi-level tree:
+Root: Document Title & Abstract.
 
-### Root: Document Title & Abstract.
-### Sections: Introduction, Methodology, Results, etc.
-### Subsections: Detailed technical breakdowns (e.g., Section 2.1 vs 2.2).
-### Content Nodes: The raw text and summaries of specific paragraphs.
+Sections: Introduction, Methodology, Results, etc.
+
+Subsections: Detailed technical breakdowns (e.g., Section 2.1 vs 2.2).
+
+Content Nodes: The raw text and summaries of specific paragraphs.
 
 2. Hierarchical Agentic Navigation
 Instead of fetching the "top-k" chunks, the agent:
-### Reads the Root Summary: Understands the overall scope of the paper.
-### Identifies Target Sections: Decides which section (e.g., "3.2 Experiments") is most likely to contain the answer.
-### Drills Down: Navigates only to relevant subsections, maintaining full context of the document's logic.
+
+Reads the Root Summary: Understands the overall scope of the paper.
+
+Identifies Target Sections: Decides which section (e.g., "3.2 Experiments") is most likely to contain the answer.
+
+Drills Down: Navigates only to relevant subsections, maintaining full context of the document's logic.
 
 3. Context-Aware Generation
-By traversing the tree, the LLM maintains the "structural context" (e.g., it knows that the data it is reading belongs to a specific table in the 'Experimental Results' section), leading to significantly higher accuracy in technical queries.
+By traversing the tree, the LLM maintains the structural context. It knows that the data it is reading belongs to a specific table or section, leading to significantly higher accuracy in technical queries.
 
-## 📊 Project Highlights
+📊 Project Highlights
+Zero-Vector Setup: No need for complex embedding models or memory-heavy vector databases.
 
-# 1. Zero-Vector Setup:#  No need for complex embedding models or vector databases.
+High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (like pool5) to handle arbitrary input sizes.
 
-2. High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
+Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional "black-box" vector search.
 
-3. Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
+💻 System Workflow
+Code snippet
+graph TD
+    A[User Query] --> B[LLM-based Section Selection]
+    B --> C[Hierarchical Tree Traversal]
+    C --> D[Relevant Node Extraction]
+    D --> E[Answer Generation]
+    
+👔 Recruitment Note
+I built this project to explore the frontiers of Agentic RAG. While vector databases are the industry standard, hierarchical indexing represents the next step in making LLMs truly understand structured data like legal documents, financial reports, and technical research papers.
 
-## 💻 Getting Started
+Key Skills Demonstrated:
 
-            User Query
-                ↓
-      LLM-based Section Selection
-                ↓
-      Hierarchical Tree Traversal
-                ↓
-      Relevant Node Extraction
-                ↓
-         Answer Generation
+RAG Architecture: Advanced knowledge of both Traditional and Tree-based methods.
 
-## Recruitment Note
-I built this project to explore the frontiers of Agentic RAG. While vector databases are the industry standard, hierarchical indexing represents the next step in making LLMs truly understand structured data like legal documents, financial reports, and technical research.
+API Integration: Hands-on experience with PageIndex and Groq.
 
-## Key Skills Demonstrated: 
+Prompt Engineering: Designing logic for Agentic Navigation.
 
-1. RAG Architecture (Traditional vs. Tree-based)
-2. API Integration (PageIndex, Groq)
-3. Prompt Engineering for Agentic Navigation
-4. Technical Documentation & Information Retrieval
+Technical Communication: Bridging complex IR concepts with functional code.
