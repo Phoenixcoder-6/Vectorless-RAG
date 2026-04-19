@@ -1,4 +1,4 @@
-#📄 Vectorless RAG: Hierarchical Reasoning for Research Papers
+# 📄 Vectorless RAG: Hierarchical Reasoning for Research Papers
 
 ## 🚀 The Problem with Traditional RAG
 
