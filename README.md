@@ -41,23 +41,23 @@ By traversing the tree, the LLM maintains the "structural context" (e.g., it kno
 
 ## 📊 Project Highlights
 
-#### Zero-Vector Setup: No need for complex embedding models or vector databases.
+#### Zero-Vector Setup:  No need for complex embedding models or vector databases.
 
--- High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
+#### High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
 
--- Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
+#### Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
 
 ## 💻 Getting Started
 
-User Query
-   ↓
-LLM-based Section Selection
-   ↓
-Hierarchical Tree Traversal
-   ↓
-Relevant Node Extraction
-   ↓
-Answer Generation
+            User Query
+                ↓
+      LLM-based Section Selection
+                ↓
+      Hierarchical Tree Traversal
+                ↓
+      Relevant Node Extraction
+                ↓
+         Answer Generation
 
 ## Recruitment Note
 I built this project to explore the frontiers of Agentic RAG. While vector databases are the industry standard, hierarchical indexing represents the next step in making LLMs truly understand structured data like legal documents, financial reports, and technical research.
