@@ -41,7 +41,7 @@ By traversing the tree, the LLM maintains the "structural context" (e.g., it kno
 
 ## 📊 Project Highlights
 
-1. Zero-Vector Setup:  No need for complex embedding models or vector databases.
+# 1. Zero-Vector Setup:#  No need for complex embedding models or vector databases.
 
 2. High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
 
