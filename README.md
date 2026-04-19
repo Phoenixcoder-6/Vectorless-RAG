@@ -81,6 +81,6 @@ While vector databases are widely used, hierarchical indexing + agentic reasonin
 * 🔹 System Thinking: End-to-end pipeline design
 * 🔹 Technical Communication: Translating complex IR concepts into working systems
 
-##⭐ Final Insight
+## ⭐ Final Insight
 
-#### Vectorless RAG is not a replacement — I’s a step toward interpretable, reasoning-driven AI systems
+## Vectorless RAG is not a replacement — I’s a step toward interpretable, reasoning-driven AI systems
