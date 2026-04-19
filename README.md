@@ -1,18 +1,18 @@
-📄 Vectorless RAG: Hierarchical Reasoning for Research Papers
-🚀 The Problem with Traditional RAG
+#📄 Vectorless RAG: Hierarchical Reasoning for Research Papers
+
+## 🚀 The Problem with Traditional RAG
 
 Most Retrieval-Augmented Generation (RAG) systems rely on Vector Embeddings. While powerful, they introduce several limitations:
-
-❌ Lost Context
+### ❌ Lost Context
 Chunking documents often breaks semantic flow and continuity.
-❌ Flat Retrieval
+### ❌ Flat Retrieval
 Similarity search treats documents as independent chunks, ignoring hierarchical relationships (sections, subsections, etc.).
-❌ Inefficient Reasoning
+### ❌ Inefficient Reasoning
 LLMs must infer relevance using distance metrics rather than structured understanding.
-💡 The Solution: Vectorless (Tree-Based) RAG
+
+## 💡 The Solution: Vectorless (Tree-Based) RAG
 
 This project implements a Vectorless RAG pipeline that replaces flat vector search with a Hierarchical Document Tree.
-
 Instead of retrieving top-k similar chunks, an LLM navigates the document structure, mimicking how humans read:
 
 📚 From high-level summaries → to detailed sections → to precise answers
