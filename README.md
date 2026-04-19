@@ -39,13 +39,16 @@ Instead of fetching the "top-k" chunks, the agent:
 3. Context-Aware Generation
 By traversing the tree, the LLM maintains the "structural context" (e.g., it knows that the data it is reading belongs to a specific table in the 'Experimental Results' section), leading to significantly higher accuracy in technical queries.
 
-📊 Project Highlights
+## 📊 Project Highlights
 
-### Zero-Vector Setup: No need for complex embedding models or vector databases.
-### High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
-### Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
+#Zero-Vector Setup: No need for complex embedding models or vector databases.
 
-💻 Getting Started
+#High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (e.g., pool5) to handle arbitrary input sizes.
+
+#Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional black-box vector search.
+
+## 💻 Getting Started
+
 User Query
    ↓
 LLM-based Section Selection
