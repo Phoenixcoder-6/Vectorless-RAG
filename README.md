@@ -15,14 +15,16 @@ LLMs must infer relevance using distance metrics rather than structured understa
 This project implements a Vectorless RAG pipeline that replaces flat vector search with a Hierarchical Document Tree.
 Instead of retrieving top-k similar chunks, an LLM navigates the document structure, mimicking how humans read:
 
-📚 From high-level summaries → to detailed sections → to precise answers
+    📚 From high-level summaries → to detailed sections → to precise answers
 
-🛠️ Tech Stack
-Core Engine: PageIndex (document parsing & hierarchical indexing)
-LLM Inference: Groq / OpenAI
-Language: Python
-Environment: Jupyter Notebook
-Data: Research Papers (e.g., Spatial Pyramid Pooling in CNNs)
+## 🛠️ Tech Stack
+
+* Core Engine: PageIndex (document parsing & hierarchical indexing)
+-- LLM Inference: Groq / OpenAI
+-- Language: Python
+-- Environment: Jupyter Notebook
+-- Data: Research Papers (e.g., Spatial Pyramid Pooling in CNNs)
+
 🏗️ How It Works
 1️⃣ Automated Tree Construction
 
