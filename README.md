@@ -1,73 +1,83 @@
 📄 Vectorless RAG: Hierarchical Reasoning for Research Papers
 🚀 The Problem with Traditional RAG
-Most RAG (Retrieval-Augmented Generation) systems rely on Vector Embeddings. While powerful, they often struggle with:
 
-Lost Context: "Chunking" documents often breaks the semantic flow.
+Most Retrieval-Augmented Generation (RAG) systems rely on Vector Embeddings. While powerful, they introduce several limitations:
 
-Flat Retrieval: Similarity search treats a document as a bag of chunks, losing the hierarchical relationship between sections, subsections, and paragraphs.
-
-Inefficient Reasoning: LLMs must "guess" which chunks are relevant based on a simple distance metric.
-
+❌ Lost Context
+Chunking documents often breaks semantic flow and continuity.
+❌ Flat Retrieval
+Similarity search treats documents as independent chunks, ignoring hierarchical relationships (sections, subsections, etc.).
+❌ Inefficient Reasoning
+LLMs must infer relevance using distance metrics rather than structured understanding.
 💡 The Solution: Vectorless (Tree-Based) RAG
-This project implements a Vectorless RAG pipeline that replaces the "flat" vector database with a Hierarchical Document Tree. Instead of searching for similar vectors, an LLM agent navigates the actual structure of the document—moving from high-level summaries to specific technical details—mimicking how a human researcher reads a paper.
+
+This project implements a Vectorless RAG pipeline that replaces flat vector search with a Hierarchical Document Tree.
+
+Instead of retrieving top-k similar chunks, an LLM navigates the document structure, mimicking how humans read:
+
+📚 From high-level summaries → to detailed sections → to precise answers
 
 🛠️ Tech Stack
-Core Engine: PageIndex (Automated document tree construction and hierarchical search).
+Core Engine: PageIndex (document parsing & hierarchical indexing)
+LLM Inference: Groq / OpenAI
+Language: Python
+Environment: Jupyter Notebook
+Data: Research Papers (e.g., Spatial Pyramid Pooling in CNNs)
+🏗️ How It Works
+1️⃣ Automated Tree Construction
 
-Inference: Groq / OpenAI (Handling reasoning and final generation).
+The system converts a PDF into a multi-level structure:
 
-Data Processing: Python, Jupyter Notebook.
+Root: Document title & abstract
+Sections: Introduction, Methodology, Results
+Subsections: Fine-grained breakdown (e.g., 2.1, 2.2)
+Content Nodes: Paragraph-level text + summaries
+2️⃣ Hierarchical Agentic Navigation
 
-Target Data: Complex Research Papers (e.g., Spatial Pyramid Pooling in Deep Convolutional Networks).
+Instead of flat retrieval, the LLM:
 
-🏗️ How it Works
-1. Automated Tree Construction
-The system ingests a PDF and parses its layout into a multi-level tree:
+📖 Reads the root summary to understand context
+🎯 Selects the most relevant section
+🔍 Recursively drills down into subsections
+🧠 Maintains logical flow of the document
+3️⃣ Context-Aware Generation
 
-Root: Document Title & Abstract.
+Because retrieval is structure-aware:
 
-Sections: Introduction, Methodology, Results, etc.
-
-Subsections: Detailed technical breakdowns (e.g., Section 2.1 vs 2.2).
-
-Content Nodes: The raw text and summaries of specific paragraphs.
-
-2. Hierarchical Agentic Navigation
-Instead of fetching the "top-k" chunks, the agent:
-
-Reads the Root Summary: Understands the overall scope of the paper.
-
-Identifies Target Sections: Decides which section (e.g., "3.2 Experiments") is most likely to contain the answer.
-
-Drills Down: Navigates only to relevant subsections, maintaining full context of the document's logic.
-
-3. Context-Aware Generation
-By traversing the tree, the LLM maintains the structural context. It knows that the data it is reading belongs to a specific table or section, leading to significantly higher accuracy in technical queries.
-
+The model understands where information comes from
+Maintains section-level context
+Produces more accurate and grounded answers
 📊 Project Highlights
-Zero-Vector Setup: No need for complex embedding models or memory-heavy vector databases.
-
-High Precision: Successfully extracted deep architectural details from the SPP-Net paper, such as how Spatial Pyramid Pooling replaces fixed-size pooling layers (like pool5) to handle arbitrary input sizes.
-
-Human-Like Reasoning: The chat agent explains where in the hierarchy it found the information, providing better transparency than traditional "black-box" vector search.
-
+🚫 Zero Vector Dependency
+No embeddings or vector databases required
+🎯 High Precision Retrieval
+Extracted deep insights from research papers (e.g., SPP-Net architecture)
+🧠 Human-Like Reasoning
+Navigation mimics how researchers explore documents
+🔍 Explainable Outputs
+Retrieval path is transparent (section → subsection → answer)
 💻 System Workflow
-Code snippet
-graph TD
-    A[User Query] --> B[LLM-based Section Selection]
-    B --> C[Hierarchical Tree Traversal]
-    C --> D[Relevant Node Extraction]
-    D --> E[Answer Generation]
-    
 👔 Recruitment Note
-I built this project to explore the frontiers of Agentic RAG. While vector databases are the industry standard, hierarchical indexing represents the next step in making LLMs truly understand structured data like legal documents, financial reports, and technical research papers.
 
-Key Skills Demonstrated:
+This project was built to explore next-generation RAG architectures.
 
-RAG Architecture: Advanced knowledge of both Traditional and Tree-based methods.
+While vector databases are widely used, hierarchical indexing + agentic reasoning provides a more interpretable and structured alternative—especially for:
 
-API Integration: Hands-on experience with PageIndex and Groq.
+Legal documents
+Financial reports
+Research papers
+🧑‍💻 Key Skills Demonstrated
+🔹 RAG System Design
+Traditional + Vectorless architectures
+🔹 LLM Integration
+Groq / OpenAI APIs
+🔹 Prompt Engineering
+Agentic navigation & reasoning
+🔹 System Thinking
+End-to-end pipeline design
+🔹 Technical Communication
+Translating complex IR concepts into working systems
+⭐ Final Insight
 
-Prompt Engineering: Designing logic for Agentic Navigation.
-
-Technical Communication: Bridging complex IR concepts with functional code.
+Vectorless RAG is not a replacement —
+it’s a step toward interpretable, reasoning-driven AI systems
